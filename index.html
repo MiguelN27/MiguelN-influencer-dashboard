@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Feeding Habits</title>
+    <!-- Tailwind CSS CDN via script -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      // Enable dark mode by default
+      document.documentElement.classList.add('dark');
+    </script>
+</head>
+<body class="bg-orange-50 dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center transition-colors duration-300">
+    <div class="container mx-auto p-4 sm:p-8 flex-1 flex flex-col justify-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-orange-600 dark:text-yellow-300 mb-6 drop-shadow-lg">Cat Feeding Habits</h1>
+        <p class="text-lg sm:text-xl text-gray-700 dark:text-yellow-100 text-center mb-4">Welcome! Learn about the best practices for feeding your feline friends.</p>
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-10 mt-6 mx-auto max-w-xl w-full">
+            <h2 class="text-2xl sm:text-3xl font-semibold mb-2 text-orange-700 dark:text-yellow-200">Why Proper Feeding Matters</h2>
+            <ul class="list-disc pl-6 text-gray-600 dark:text-yellow-100 space-y-1">
+                <li>Ensures a healthy weight</li>
+                <li>Prevents diseases</li>
+                <li>Promotes longevity</li>
+            </ul>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="flex flex-col sm:flex-row gap-6 mt-10 w-full max-w-3xl mx-auto">
+            <!-- Card 1 -->
+            <div class="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                <figure class="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                    <img src="https://placekitten.com/320/192" alt="Cat placeholder" class="object-cover w-full h-full">
+                </figure>
+                <footer class="p-4 bg-orange-50 dark:bg-gray-900 text-center">
+                    <span class="text-lg font-semibold text-orange-700 dark:text-yellow-200">Morning Meal</span>
+                </footer>
+            </div>
+            <!-- Card 2 -->
+            <div class="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                <figure class="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                    <img src="https://placekitten.com/321/192" alt="Cat placeholder" class="object-cover w-full h-full">
+                </figure>
+                <footer class="p-4 bg-orange-50 dark:bg-gray-900 text-center">
+                    <span class="text-lg font-semibold text-orange-700 dark:text-yellow-200">Evening Meal</span>
+                </footer>
+            </div>
+        </div>
+
+        <footer class="mt-10 text-center text-sm text-orange-700 dark:text-yellow-300 opacity-80">
+            &copy; 2026 Cat Feeding Habits
+        </footer>
+    </div>
+</body>
+</html>
