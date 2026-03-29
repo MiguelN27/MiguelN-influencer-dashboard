@@ -1,55 +1,108 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Feeding Habits</title>
-    <!-- Tailwind CSS CDN via script -->
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <link rel="stylesheet" href="style.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Influencer Ads Impact Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      // Enable dark mode by default
-      document.documentElement.classList.add('dark');
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#3c2f2f",
+              creamPink: "#fff3ee",
+              blush: "#f7ddd4",
+              beige: "#dcc7aa",
+              rosewood: "#9d6b6b"
+            }
+          }
+        }
+      };
     </script>
-</head>
-<body class="bg-orange-50 dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center transition-colors duration-300">
-    <div class="container mx-auto p-4 sm:p-8 flex-1 flex flex-col justify-center">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-orange-600 dark:text-yellow-300 mb-6 drop-shadow-lg">Cat Feeding Habits</h1>
-        <p class="text-lg sm:text-xl text-gray-700 dark:text-yellow-100 text-center mb-4">Welcome! Learn about the best practices for feeding your feline friends.</p>
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-10 mt-6 mx-auto max-w-xl w-full">
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-2 text-orange-700 dark:text-yellow-200">Why Proper Feeding Matters</h2>
-            <ul class="list-disc pl-6 text-gray-600 dark:text-yellow-100 space-y-1">
-                <li>Ensures a healthy weight</li>
-                <li>Prevents diseases</li>
-                <li>Promotes longevity</li>
-            </ul>
-        </div>
 
-        <!-- Cards Section -->
-        <div class="flex flex-col sm:flex-row gap-6 mt-10 w-full max-w-3xl mx-auto">
-            <!-- Card 1 -->
-            <div class="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col">
-                <figure class="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                    <img src="https://placekitten.com/320/192" alt="Cat placeholder" class="object-cover w-full h-full">
-                </figure>
-                <footer class="p-4 bg-orange-50 dark:bg-gray-900 text-center">
-                    <span class="text-lg font-semibold text-orange-700 dark:text-yellow-200">Morning Meal</span>
-                </footer>
-            </div>
-            <!-- Card 2 -->
-            <div class="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col">
-                <figure class="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                    <img src="https://placekitten.com/321/192" alt="Cat placeholder" class="object-cover w-full h-full">
-                </figure>
-                <footer class="p-4 bg-orange-50 dark:bg-gray-900 text-center">
-                    <span class="text-lg font-semibold text-orange-700 dark:text-yellow-200">Evening Meal</span>
-                </footer>
-            </div>
-        </div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-creamPink text-ink antialiased">
+    <main class="min-h-screen">
+      <section class="relative overflow-hidden px-6 py-14 sm:px-10 lg:px-16 lg:py-16">
+        <div class="background-grid absolute inset-0 -z-20"></div>
+        <div class="background-aura absolute -top-20 right-[-120px] -z-10 h-72 w-72 rounded-full blur-3xl"></div>
 
-        <footer class="mt-10 text-center text-sm text-orange-700 dark:text-yellow-300 opacity-80">
-            &copy; 2026 Cat Feeding Habits
-        </footer>
-    </div>
-</body>
+        <div class="mx-auto max-w-7xl">
+          <div class="space-y-6">
+            <div class="inline-flex rounded-full border border-rosewood/20 bg-white/75 px-4 py-1 text-xs uppercase tracking-[0.2em] text-rosewood">
+              Influencer Conversion Studio
+            </div>
+            <h1 class="max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              Measure ad impact across Instagram, TikTok, and YouTube in one dashboard
+            </h1>
+            <p class="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
+              Consolidate campaign performance, affiliate revenue, and audience behavior to understand which products and platforms generate the highest return.
+            </p>
+          </div>
+
+          <section class="card-glow mt-10 rounded-3xl border border-rosewood/15 bg-white/85 p-5 shadow-2xl shadow-rosewood/10 backdrop-blur sm:p-8">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p class="text-xs uppercase tracking-[0.16em] text-rosewood/75">First Block</p>
+                <h2 class="mt-2 text-2xl font-semibold sm:text-3xl">KPI Overview</h2>
+              </div>
+              <span class="rounded-full border border-beige bg-beige/30 px-3 py-1 text-xs font-medium text-ink/85">
+                Last 30 days
+              </span>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+                <p class="kpi-label">Volume</p>
+                <p class="mt-2 text-3xl font-semibold">18.4K</p>
+                <p class="kpi-delta mt-2">+11.2% vs previous period</p>
+              </article>
+
+              <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+                <p class="kpi-label">Revenue</p>
+                <p class="mt-2 text-3xl font-semibold">€12,940</p>
+                <p class="kpi-delta mt-2">Top source: Product B</p>
+              </article>
+
+              <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+                <p class="kpi-label">Engagement</p>
+                <p class="mt-2 text-3xl font-semibold">7.9%</p>
+                <p class="kpi-delta mt-2">TikTok leads interactions</p>
+              </article>
+
+              <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+                <p class="kpi-label">Retention</p>
+                <p class="mt-2 text-3xl font-semibold">63%</p>
+                <p class="kpi-delta mt-2">Returning audience growth</p>
+              </article>
+
+              <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+                <p class="kpi-label">Performance</p>
+                <p class="mt-2 text-3xl font-semibold">4.8x</p>
+                <p class="kpi-delta mt-2">Revenue to ad cost ratio</p>
+              </article>
+
+              <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+                <p class="kpi-label">Customer Satisfaction</p>
+                <p class="mt-2 text-3xl font-semibold">92%</p>
+                <p class="kpi-delta mt-2">Positive post-sale feedback</p>
+              </article>
+
+              <article class="kpi-card rounded-2xl border border-rosewood/10 p-4 sm:col-span-2 xl:col-span-2">
+                <p class="kpi-label">Efficiency</p>
+                <div class="mt-2 flex flex-wrap items-end gap-4">
+                  <p class="text-3xl font-semibold">€0.82</p>
+                  <p class="pb-1 text-sm text-ink/70">Cost per conversion</p>
+                </div>
+                <p class="kpi-delta mt-2">Optimized by platform-level targeting</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
