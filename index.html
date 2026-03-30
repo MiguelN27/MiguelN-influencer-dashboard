@@ -4,278 +4,261 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Influencer Ads Impact Dashboard</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              ink: "#3c2f2f",
-              creamPink: "#fff3ee",
-              blush: "#f7ddd4",
-              beige: "#dcc7aa",
-              rosewood: "#9d6b6b"
-            }
-          }
-        }
-      };
-    </script>
-
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-creamPink text-ink antialiased">
-    <main class="min-h-screen">
-      <header class="sticky top-0 z-30 border-b border-rosewood/15 bg-white/80 backdrop-blur">
-        <div class="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-          <a href="#" class="flex items-center gap-3" aria-label="Company homepage">
-            <span class="h-8 w-8 rounded-full border border-rosewood/30 bg-gradient-to-br from-blush to-beige"></span>
-            <span class="text-sm font-semibold uppercase tracking-[0.14em] text-rosewood sm:text-base">Cat Feeding Co.</span>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="#" class="brand" aria-label="Company homepage">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <span class="brand-name">Cat Feeding Co.</span>
           </a>
 
-          <nav aria-label="Primary navigation">
-            <button
-              id="nav-toggle"
-              type="button"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rosewood/25 bg-white/90 text-rosewood transition hover:bg-rosewood/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rosewood/50 sm:hidden"
-              aria-label="Toggle navigation menu"
-              aria-controls="primary-menu"
-              aria-expanded="false"
-            >
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            </button>
+          <nav class="site-nav" aria-label="Primary navigation">
+            <details class="mobile-nav">
+              <summary aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </summary>
+              <ul class="nav-list mobile-list">
+                <li><a href="#kpi-overview">KPI Overview</a></li>
+                <li><a href="#drivers">Drivers</a></li>
+              </ul>
+            </details>
 
-            <ul id="primary-menu" class="absolute right-6 top-[calc(100%+0.5rem)] hidden min-w-52 flex-col gap-1 rounded-2xl border border-rosewood/15 bg-white/95 p-2 text-sm font-medium shadow-xl shadow-rosewood/10 backdrop-blur sm:static sm:flex sm:min-w-0 sm:flex-row sm:items-center sm:gap-2 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-0 sm:text-base">
-              <li>
-                <a href="#kpi-overview" class="block rounded-full px-3 py-2 text-ink/80 transition hover:bg-rosewood/10 hover:text-rosewood focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rosewood/50" aria-label="Jump to KPI Overview section">KPI Overview</a>
-              </li>
-              <li>
-                <a href="#drivers" class="block rounded-full px-3 py-2 text-ink/80 transition hover:bg-rosewood/10 hover:text-rosewood focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rosewood/50" aria-label="Jump to Drivers section">Drivers</a>
-              </li>
+            <ul class="nav-list desktop-list">
+              <li><a href="#kpi-overview">KPI Overview</a></li>
+              <li><a href="#drivers">Drivers</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <section class="relative overflow-hidden px-6 py-14 sm:px-10 lg:px-16 lg:py-16">
-        <div class="background-grid absolute inset-0 -z-20"></div>
-        <div class="background-aura absolute -top-20 right-[-120px] -z-10 h-72 w-72 rounded-full blur-3xl"></div>
+      <section class="hero-wrap">
+        <div class="background-grid" aria-hidden="true"></div>
+        <div class="background-aura" aria-hidden="true"></div>
 
-        <div class="mx-auto max-w-7xl">
-          <div class="space-y-6">
-            <div class="inline-flex rounded-full border border-rosewood/20 bg-white/75 px-4 py-1 text-xs uppercase tracking-[0.2em] text-rosewood">
-              Influencer Conversion Studio
-            </div>
-            <h1 class="max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-              Measure ad impact across Instagram, TikTok, and YouTube in one dashboard
-            </h1>
-            <p class="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
-              Consolidate campaign performance, affiliate revenue, and audience behavior to understand which products and platforms generate the highest return.
+        <div class="container">
+          <div class="hero-copy">
+            <p class="eyebrow">Influencer Conversion Studio</p>
+            <h1>Measure ad impact across Instagram, TikTok, and YouTube in one dashboard</h1>
+            <p>
+              Consolidate campaign performance, affiliate revenue, and audience behavior to understand which products and
+              platforms generate the highest return.
             </p>
           </div>
 
-          <section id="kpi-overview" class="anchor-target card-glow mt-10 rounded-3xl border border-rosewood/15 bg-white/85 p-5 shadow-2xl shadow-rosewood/10 backdrop-blur sm:p-8">
-            <div class="flex flex-wrap items-end justify-between gap-4">
+          <section id="kpi-overview" class="panel card-glow anchor-target">
+            <div class="panel-head">
               <div>
-                <p class="text-xs uppercase tracking-[0.16em] text-rosewood/75">First Block</p>
-                <h2 class="mt-2 text-2xl font-semibold sm:text-3xl">KPI Overview</h2>
+                <p class="section-kicker">First Block</p>
+                <h2>KPI Overview</h2>
               </div>
-              <span class="rounded-full border border-beige bg-beige/30 px-3 py-1 text-xs font-medium text-ink/85">
-                Last 30 days
-              </span>
+              <span class="badge">Last 30 days</span>
             </div>
 
-            <div class="mt-6 grid grid-cols-1 gap-5 xl:grid-cols-3">
-              <article class="chart-card rounded-2xl border border-rosewood/15 bg-white/80 p-4 xl:col-span-2">
-                <div class="kpi-card rounded-2xl border border-rosewood/10 p-6 sm:min-h-[150px]">
-                  <p class="kpi-label">Volume</p>
-                  <div class="mt-3 flex flex-wrap items-end justify-between gap-4">
-                    <p class="text-5xl font-semibold leading-none sm:text-6xl">18.4K</p>
-                    <p class="text-base text-ink/70">+11.2% vs previous period</p>
+            <div class="kpi-grid">
+              <article class="chart-card wide-card">
+                <div class="headline-split">
+                  <div class="kpi-card headline-card">
+                    <p class="kpi-label">Volume</p>
+                    <div class="headline-row">
+                      <p class="big-number">18.4K</p>
+                      <p class="kpi-delta">+11.2% vs previous period</p>
+                    </div>
+                  </div>
+
+                  <div class="kpi-card headline-card">
+                    <p class="kpi-label">Revenue</p>
+                    <div class="headline-row">
+                      <p class="big-number">EUR 12,940</p>
+                      <p class="kpi-delta">Top source: Product B</p>
+                    </div>
                   </div>
                 </div>
 
-                <div class="mt-4 flex items-center justify-between gap-3">
-                  <h3 class="text-base font-semibold sm:text-lg">Engagement Growth (Last 30 Days)</h3>
-                  <span class="rounded-full bg-blush px-3 py-1 text-xs font-medium text-rosewood">Trending Up</span>
+                <div class="chart-headline">
+                  <h3>Engagement Growth (Last 30 Days)</h3>
+                  <span class="state-pill">Trending Up</span>
                 </div>
-                <p class="mt-1 text-sm text-ink/70">Daily engagement rate trend across your active campaign channels.</p>
-                <div class="mt-4 h-72 -mx-1 sm:-mx-2">
-                  <canvas id="engagementChart" aria-label="Engagement line chart for last 30 days" role="img"></canvas>
+                <p class="muted">Daily engagement rate trend across your active campaign channels.</p>
+                <div class="chart-box line-chart" role="img" aria-label="Engagement line chart for last 30 days">
+                  <svg viewBox="0 0 640 280" aria-hidden="true">
+                    <polyline class="line-fill" points="20,260 20,220 40,224 60,212 80,218 100,206 120,210 140,196 160,190 180,184 200,176 220,180 240,170 260,160 280,166 300,150 320,146 340,136 360,132 380,124 400,128 420,114 440,110 460,102 480,96 500,90 520,84 540,76 560,72 580,64 600,56 620,50 620,260"></polyline>
+                    <polyline class="line-stroke" points="20,220 40,224 60,212 80,218 100,206 120,210 140,196 160,190 180,184 200,176 220,180 240,170 260,160 280,166 300,150 320,146 340,136 360,132 380,124 400,128 420,114 440,110 460,102 480,96 500,90 520,84 540,76 560,72 580,64 600,56 620,50"></polyline>
+                  </svg>
                 </div>
               </article>
 
-              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-1">
-                <article class="chart-card rounded-2xl border border-rosewood/15 bg-white/80 p-4">
-                  <h3 class="text-base font-semibold sm:text-lg">Retention Rate</h3>
-                  <p class="mt-1 text-sm text-ink/70">Based on total user base (100%).</p>
-                  <div class="mt-4 h-48">
-                    <canvas id="retentionChart" aria-label="Retention donut chart" role="img"></canvas>
+              <div class="mini-grid">
+                <article class="chart-card">
+                  <h3>Retention Rate</h3>
+                  <p class="muted">Based on total user base (100%).</p>
+                  <div class="chart-box">
+                    <div class="donut" style="--donut: conic-gradient(#9d6b6b 0 63%, #f1ddd2 63% 100%);">
+                      <span>63%</span>
+                    </div>
                   </div>
                 </article>
 
-                <article class="chart-card rounded-2xl border border-rosewood/15 bg-white/80 p-4">
-                  <h3 class="text-base font-semibold sm:text-lg">Satisfaction Rate</h3>
-                  <p class="mt-1 text-sm text-ink/70">Based on total user base (100%).</p>
-                  <div class="mt-4 h-48">
-                    <canvas id="satisfactionChart" aria-label="Satisfaction donut chart" role="img"></canvas>
+                <article class="chart-card">
+                  <h3>Satisfaction Rate</h3>
+                  <p class="muted">Based on total user base (100%).</p>
+                  <div class="chart-box">
+                    <div class="donut" style="--donut: conic-gradient(#dcc7aa 0 92%, #f6e9dd 92% 100%);">
+                      <span>92%</span>
+                    </div>
                   </div>
                 </article>
               </div>
             </div>
 
-            <div class="mt-6 rounded-2xl border border-rosewood/15 bg-white/70 p-4 sm:p-5">
-              <p class="text-xs uppercase tracking-[0.16em] text-rosewood/70">Full Width Section</p>
-              <h3 class="mt-2 text-lg font-semibold">Quality and Optimization</h3>
-              <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-                <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+            <div class="full-width-panel">
+              <p class="section-kicker">Full Width Section</p>
+              <h3>Quality and Optimization</h3>
+              <div class="metric-grid">
+                <article class="kpi-card">
                   <p class="kpi-label">Efficiency</p>
-                  <div class="mt-2 flex flex-wrap items-end gap-4">
-                    <p class="text-3xl font-semibold">€0.82</p>
-                    <p class="pb-1 text-sm text-ink/70">Cost per conversion</p>
-                  </div>
-                  <p class="kpi-delta mt-2">Optimized by platform-level targeting</p>
+                  <p class="medium-number">EUR 0.82</p>
+                  <p class="kpi-delta">Cost per conversion</p>
+                  <p class="kpi-delta">Optimized by platform-level targeting</p>
                 </article>
 
-                <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
-                  <p class="kpi-label">Revenue</p>
-                  <p class="mt-2 text-3xl font-semibold">€12,940</p>
-                  <p class="kpi-delta mt-2">Top source: Product B</p>
-                </article>
-
-                <article class="kpi-card rounded-2xl border border-rosewood/10 p-4">
+                <article class="kpi-card">
                   <p class="kpi-label">Performance</p>
-                  <p class="mt-2 text-3xl font-semibold">4.8x</p>
-                  <p class="kpi-delta mt-2">Revenue to ad cost ratio</p>
+                  <p class="medium-number">4.8x</p>
+                  <p class="kpi-delta">Revenue to ad cost ratio</p>
                 </article>
               </div>
             </div>
           </section>
 
-          <section id="drivers" class="anchor-target card-glow mt-8 rounded-3xl border border-rosewood/15 bg-white/85 p-5 shadow-2xl shadow-rosewood/10 backdrop-blur sm:p-8">
-            <div class="flex flex-wrap items-end justify-between gap-4">
+          <section id="drivers" class="panel card-glow anchor-target">
+            <div class="panel-head">
               <div>
-                <p class="text-xs uppercase tracking-[0.16em] text-rosewood/75">Second Block</p>
-                <h2 class="mt-2 text-2xl font-semibold sm:text-3xl">Drivers</h2>
+                <p class="section-kicker">Second Block</p>
+                <h2>Drivers</h2>
               </div>
-              <span class="rounded-full border border-beige bg-beige/30 px-3 py-1 text-xs font-medium text-ink/85">
-                Core Performance Levers
-              </span>
+              <span class="badge">Core Performance Levers</span>
             </div>
 
-            <div class="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-3">
-              <article class="kpi-card rounded-2xl border border-rosewood/10 p-5">
+            <div class="drivers-grid">
+              <article class="kpi-card column-card">
                 <p class="kpi-label">First</p>
-                <div class="mt-4 space-y-5">
-                  <div>
-                    <h3 class="text-base font-semibold sm:text-lg">Conversion by Stage</h3>
-                    <div class="mt-3 space-y-3">
-                      <div>
-                        <div class="flex items-center justify-between text-xs text-ink/75">
-                          <span>Reach captured</span>
-                          <span class="font-semibold text-ink">100% | 412,000</span>
-                        </div>
-                        <div class="mt-1 h-2 w-full overflow-hidden rounded-full bg-rosewood/15">
-                          <div class="h-full rounded-full bg-rosewood" style="width: 100%"></div>
-                        </div>
-                      </div>
 
-                      <div>
-                        <div class="flex items-center justify-between text-xs text-ink/75">
-                          <span>Landing visit rate</span>
-                          <span class="font-semibold text-ink">4.5% | 18,400</span>
-                        </div>
-                        <div class="mt-1 h-2 w-full overflow-hidden rounded-full bg-rosewood/15">
-                          <div class="h-full rounded-full bg-[#c19191]" style="width: 4.5%"></div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class="flex items-center justify-between text-xs text-ink/75">
-                          <span>Qualified lead rate</span>
-                          <span class="font-semibold text-ink">33.7% | 6,200</span>
-                        </div>
-                        <div class="mt-1 h-2 w-full overflow-hidden rounded-full bg-rosewood/15">
-                          <div class="h-full rounded-full bg-[#be8d8d]" style="width: 33.7%"></div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class="flex items-center justify-between text-xs text-ink/75">
-                          <span>Checkout start rate</span>
-                          <span class="font-semibold text-ink">33.9% | 2,100</span>
-                        </div>
-                        <div class="mt-1 h-2 w-full overflow-hidden rounded-full bg-rosewood/15">
-                          <div class="h-full rounded-full bg-[#b88383]" style="width: 33.9%"></div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class="flex items-center justify-between text-xs text-ink/75">
-                          <span>Sale close rate</span>
-                          <span class="font-semibold text-ink">43.9% | 922</span>
-                        </div>
-                        <div class="mt-1 h-2 w-full overflow-hidden rounded-full bg-rosewood/15">
-                          <div class="h-full rounded-full bg-[#b37a7a]" style="width: 43.9%"></div>
-                        </div>
-                      </div>
-                    </div>
+                <h3>Conversion by Stage</h3>
+                <div class="funnel-list">
+                  <div class="funnel-item">
+                    <div><span>Reach captured</span><strong>100% | 412,000</strong></div>
+                    <span class="track"><span style="width: 100%; background: #9d6b6b"></span></span>
                   </div>
-
-                  <div>
-                    <h3 class="text-base font-semibold sm:text-lg">Performance by Product</h3>
-                    <p class="mt-1 text-sm text-ink/70">Commission split across promoted products.</p>
-                    <div class="mt-3 h-56">
-                      <canvas id="productPerformanceChart" aria-label="Product performance pie chart" role="img"></canvas>
-                    </div>
+                  <div class="funnel-item">
+                    <div><span>Landing visit rate</span><strong>4.5% | 18,400</strong></div>
+                    <span class="track"><span style="width: 4.5%; background: #c19191"></span></span>
                   </div>
+                  <div class="funnel-item">
+                    <div><span>Qualified lead rate</span><strong>33.7% | 6,200</strong></div>
+                    <span class="track"><span style="width: 33.7%; background: #be8d8d"></span></span>
+                  </div>
+                  <div class="funnel-item">
+                    <div><span>Checkout start rate</span><strong>33.9% | 2,100</strong></div>
+                    <span class="track"><span style="width: 33.9%; background: #b88383"></span></span>
+                  </div>
+                  <div class="funnel-item">
+                    <div><span>Sale close rate</span><strong>43.9% | 922</strong></div>
+                    <span class="track"><span style="width: 43.9%; background: #b37a7a"></span></span>
+                  </div>
+                </div>
+
+                <h3>Performance by Product</h3>
+                <p class="muted">Commission split across promoted products.</p>
+                <div class="chart-box">
+                  <div class="pie"></div>
+                  <ul class="legend">
+                    <li><i style="background: #dcc7aa"></i>Product A</li>
+                    <li><i style="background: #9d6b6b"></i>Product B</li>
+                    <li><i style="background: #f2d6cb"></i>Product C</li>
+                  </ul>
                 </div>
               </article>
 
-              <article class="kpi-card rounded-2xl border border-rosewood/10 p-5">
+              <article class="kpi-card column-card">
                 <p class="kpi-label">Second</p>
-                <div class="mt-4 space-y-5">
-                  <div>
-                    <h3 class="text-base font-semibold sm:text-lg">Performance by Platform</h3>
-                    <p class="mt-1 text-sm text-ink/70">Commission generated by each social platform.</p>
-                    <div class="mt-3 h-56">
-                      <canvas id="platformPerformanceChart" aria-label="Platform performance bar chart" role="img"></canvas>
+
+                <h3>Performance by Platform</h3>
+                <p class="muted">Commission generated by each social platform.</p>
+                <div class="chart-box bar-chart">
+                  <div class="bars">
+                    <div style="height: 88%">
+                      <strong>EUR 5,620</strong>
+                      <span>Instagram</span>
+                    </div>
+                    <div style="height: 66%">
+                      <strong>EUR 4,210</strong>
+                      <span>TikTok</span>
+                    </div>
+                    <div style="height: 49%">
+                      <strong>EUR 3,110</strong>
+                      <span>YouTube</span>
                     </div>
                   </div>
+                </div>
 
-                  <div>
-                    <h3 class="text-base font-semibold sm:text-lg">Quality</h3>
-                    <p class="mt-1 text-sm text-ink/70">Lead and process quality metrics shown as rates.</p>
-                    <div class="mt-3 h-56">
-                      <canvas id="qualityMetricsChart" aria-label="Quality metrics horizontal bar chart" role="img"></canvas>
-                    </div>
+                <h3>Quality</h3>
+                <p class="muted">Lead and process quality metrics shown as rates.</p>
+                <div class="funnel-list quality-list">
+                  <div class="funnel-item">
+                    <div><span>Qualified lead ratio</span><strong>33.7%</strong></div>
+                    <span class="track"><span style="width: 33.7%; background: #c7a889"></span></span>
+                  </div>
+                  <div class="funnel-item">
+                    <div><span>Attendance rate</span><strong>71.0%</strong></div>
+                    <span class="track"><span style="width: 71%; background: #9d6b6b"></span></span>
+                  </div>
+                  <div class="funnel-item">
+                    <div><span>Pass rate</span><strong>64.0%</strong></div>
+                    <span class="track"><span style="width: 64%; background: #b98383"></span></span>
+                  </div>
+                  <div class="funnel-item">
+                    <div><span>Retention consistency</span><strong>63.0%</strong></div>
+                    <span class="track"><span style="width: 63%; background: #ad7b7b"></span></span>
                   </div>
                 </div>
               </article>
 
-              <article class="kpi-card rounded-2xl border border-rosewood/10 p-5">
+              <article class="kpi-card column-card">
                 <p class="kpi-label">Third</p>
-                <div class="mt-4 space-y-5">
-                  <div>
-                    <h3 class="text-base font-semibold sm:text-lg">Activity</h3>
-                    <p class="mt-1 text-sm text-ink/70">Content published by platform in the last 30 days.</p>
-                    <div class="mt-3 h-56">
-                      <canvas id="activityDonutChart" aria-label="Activity donut chart" role="img"></canvas>
-                    </div>
-                  </div>
 
-                  <div>
-                    <h3 class="text-base font-semibold sm:text-lg">Engagement</h3>
-                    <p class="mt-1 text-sm text-ink/70">Interaction mix by platform (values in thousands).</p>
-                    <div class="mt-3 h-56">
-                      <canvas id="engagementRadarChart" aria-label="Engagement radar chart" role="img"></canvas>
-                    </div>
+                <h3>Activity</h3>
+                <p class="muted">Content published by platform in the last 30 days.</p>
+                <div class="chart-box">
+                  <div class="donut" style="--donut: conic-gradient(#9d6b6b 0 66.7%, #dcc7aa 66.7% 89.6%, #f2d6cb 89.6% 100%);">
+                    <span>96</span>
                   </div>
+                  <ul class="legend">
+                    <li><i style="background: #9d6b6b"></i>Instagram (64)</li>
+                    <li><i style="background: #dcc7aa"></i>TikTok (22)</li>
+                    <li><i style="background: #f2d6cb"></i>YouTube (10)</li>
+                  </ul>
+                </div>
+
+                <h3>Engagement</h3>
+                <p class="muted">Interaction mix by platform (values in thousands).</p>
+                <div class="chart-box radar-chart" role="img" aria-label="Engagement radar chart">
+                  <svg viewBox="0 0 300 240" aria-hidden="true">
+                    <polygon class="radar-grid" points="150,20 272,205 28,205"></polygon>
+                    <polygon class="radar-grid" points="150,55 240,190 60,190"></polygon>
+                    <polygon class="radar-grid" points="150,88 212,175 88,175"></polygon>
+                    <polygon class="radar-area" points="150,38 226,175 106,175"></polygon>
+                    <circle cx="150" cy="38" r="4"></circle>
+                    <circle cx="226" cy="175" r="4"></circle>
+                    <circle cx="106" cy="175" r="4"></circle>
+                    <text x="150" y="14" text-anchor="middle">Instagram</text>
+                    <text x="268" y="221" text-anchor="end">TikTok</text>
+                    <text x="32" y="221" text-anchor="start">YouTube</text>
+                  </svg>
                 </div>
               </article>
             </div>
@@ -283,363 +266,5 @@
         </div>
       </section>
     </main>
-
-    <script>
-      const navToggleButton = document.getElementById("nav-toggle");
-      const primaryMenu = document.getElementById("primary-menu");
-
-      if (navToggleButton && primaryMenu) {
-        const closeMenu = () => {
-          primaryMenu.classList.add("hidden");
-          navToggleButton.setAttribute("aria-expanded", "false");
-        };
-
-        const toggleMenu = () => {
-          const expanded = navToggleButton.getAttribute("aria-expanded") === "true";
-          navToggleButton.setAttribute("aria-expanded", String(!expanded));
-          primaryMenu.classList.toggle("hidden");
-        };
-
-        navToggleButton.addEventListener("click", toggleMenu);
-
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") {
-            closeMenu();
-          }
-        });
-
-        primaryMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            if (window.innerWidth < 640) {
-              closeMenu();
-            }
-          });
-        });
-
-        window.addEventListener("resize", () => {
-          if (window.innerWidth >= 640) {
-            primaryMenu.classList.remove("hidden");
-            navToggleButton.setAttribute("aria-expanded", "false");
-          } else {
-            closeMenu();
-          }
-        });
-      }
-
-      const sharedChartOptions = {
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            labels: {
-              color: "#6d5252",
-              font: {
-                family: "Space Grotesk"
-              }
-            }
-          },
-          tooltip: {
-            backgroundColor: "rgba(60, 47, 47, 0.92)",
-            titleFont: {
-              family: "Space Grotesk"
-            },
-            bodyFont: {
-              family: "Space Grotesk"
-            }
-          }
-        }
-      };
-
-      const engagementLabels = Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`);
-      const engagementData = [
-        4.2, 4.1, 4.4, 4.3, 4.5, 4.4, 4.7, 4.8, 4.9, 5.1,
-        5.0, 5.2, 5.4, 5.3, 5.6, 5.7, 5.9, 6.0, 6.2, 6.1,
-        6.4, 6.5, 6.7, 6.8, 7.0, 7.1, 7.3, 7.4, 7.6, 7.9
-      ];
-
-      new Chart(document.getElementById("engagementChart"), {
-        type: "line",
-        data: {
-          labels: engagementLabels,
-          datasets: [
-            {
-              label: "Engagement Rate (%)",
-              data: engagementData,
-              borderColor: "#9d6b6b",
-              backgroundColor: "rgba(157, 107, 107, 0.12)",
-              fill: true,
-              borderWidth: 3,
-              tension: 0.35,
-              pointRadius: 0,
-              pointHoverRadius: 4,
-              pointHoverBackgroundColor: "#9d6b6b"
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          scales: {
-            x: {
-              ticks: {
-                color: "#7f6666",
-                maxTicksLimit: 8
-              },
-              grid: {
-                color: "rgba(157, 107, 107, 0.08)"
-              }
-            },
-            y: {
-              beginAtZero: false,
-              ticks: {
-                color: "#7f6666",
-                callback: (value) => `${value}%`
-              },
-              grid: {
-                color: "rgba(157, 107, 107, 0.08)"
-              }
-            }
-          }
-        }
-      });
-
-      new Chart(document.getElementById("retentionChart"), {
-        type: "doughnut",
-        data: {
-          labels: ["Retained Users", "Not Retained"],
-          datasets: [
-            {
-              data: [63, 37],
-              backgroundColor: ["#9d6b6b", "#f1ddd2"],
-              borderColor: ["#ffffff", "#ffffff"],
-              borderWidth: 2,
-              hoverOffset: 6
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          cutout: "68%"
-        }
-      });
-
-      new Chart(document.getElementById("satisfactionChart"), {
-        type: "doughnut",
-        data: {
-          labels: ["Satisfied Users", "Unsatisfied Users"],
-          datasets: [
-            {
-              data: [92, 8],
-              backgroundColor: ["#dcc7aa", "#f6e9dd"],
-              borderColor: ["#ffffff", "#ffffff"],
-              borderWidth: 2,
-              hoverOffset: 6
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          cutout: "68%"
-        }
-      });
-
-      new Chart(document.getElementById("productPerformanceChart"), {
-        type: "pie",
-        data: {
-          labels: ["Product A", "Product B", "Product C"],
-          datasets: [
-            {
-              label: "Commission (€)",
-              data: [1575, 8460, 2904],
-              backgroundColor: ["#dcc7aa", "#9d6b6b", "#f2d6cb"],
-              borderColor: ["#ffffff", "#ffffff", "#ffffff"],
-              borderWidth: 2
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          plugins: {
-            ...sharedChartOptions.plugins,
-            legend: {
-              position: "bottom",
-              labels: {
-                color: "#6d5252",
-                font: {
-                  family: "Space Grotesk"
-                }
-              }
-            }
-          }
-        }
-      });
-
-      new Chart(document.getElementById("platformPerformanceChart"), {
-        type: "bar",
-        data: {
-          labels: ["Instagram", "TikTok", "YouTube"],
-          datasets: [
-            {
-              label: "Commission (€)",
-              data: [5620, 4210, 3110],
-              backgroundColor: ["#9d6b6b", "#b98383", "#dcc7aa"],
-              borderRadius: 10,
-              maxBarThickness: 46
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          plugins: {
-            ...sharedChartOptions.plugins,
-            legend: {
-              display: false
-            }
-          },
-          scales: {
-            x: {
-              ticks: {
-                color: "#6d5252"
-              },
-              grid: {
-                color: "rgba(157, 107, 107, 0.06)"
-              }
-            },
-            y: {
-              beginAtZero: true,
-              ticks: {
-                color: "#6d5252",
-                callback: (value) => `€${Number(value).toLocaleString()}`
-              },
-              grid: {
-                color: "rgba(157, 107, 107, 0.1)"
-              }
-            }
-          }
-        }
-      });
-
-      new Chart(document.getElementById("qualityMetricsChart"), {
-        type: "bar",
-        data: {
-          labels: ["Qualified lead ratio", "Attendance rate", "Pass rate", "Retention consistency"],
-          datasets: [
-            {
-              label: "Rate (%)",
-              data: [33.7, 71, 64, 63],
-              backgroundColor: "rgba(220, 199, 170, 0.9)",
-              borderColor: "#9d6b6b",
-              borderWidth: 1.5,
-              borderRadius: 8,
-              barThickness: 16
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          indexAxis: "y",
-          plugins: {
-            ...sharedChartOptions.plugins,
-            legend: {
-              display: false
-            }
-          },
-          scales: {
-            x: {
-              beginAtZero: true,
-              max: 100,
-              ticks: {
-                color: "#6d5252",
-                callback: (value) => `${value}%`
-              },
-              grid: {
-                color: "rgba(60, 47, 47, 0.08)",
-                borderDash: [5, 4]
-              }
-            },
-            y: {
-              ticks: {
-                color: "#6d5252"
-              },
-              grid: {
-                display: false
-              }
-            }
-          }
-        }
-      });
-
-      new Chart(document.getElementById("activityDonutChart"), {
-        type: "doughnut",
-        data: {
-          labels: ["Instagram (64)", "TikTok (22)", "YouTube (10)"],
-          datasets: [
-            {
-              data: [64, 22, 10],
-              backgroundColor: ["#9d6b6b", "#dcc7aa", "#f2d6cb"],
-              borderColor: ["#ffffff", "#ffffff", "#ffffff"],
-              borderWidth: 2,
-              hoverOffset: 6
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          cutout: "62%",
-          plugins: {
-            ...sharedChartOptions.plugins,
-            legend: {
-              position: "bottom",
-              labels: {
-                color: "#6d5252",
-                font: {
-                  family: "Space Grotesk"
-                }
-              }
-            }
-          }
-        }
-      });
-
-      new Chart(document.getElementById("engagementRadarChart"), {
-        type: "radar",
-        data: {
-          labels: ["Instagram", "TikTok", "YouTube"],
-          datasets: [
-            {
-              label: "Likes (K)",
-              data: [42.8, 31.2, 18.5],
-              borderColor: "#9d6b6b",
-              backgroundColor: "rgba(157, 107, 107, 0.18)",
-              pointBackgroundColor: "#9d6b6b"
-            }
-          ]
-        },
-        options: {
-          ...sharedChartOptions,
-          scales: {
-            r: {
-              suggestedMin: 0,
-              suggestedMax: 50,
-              angleLines: {
-                color: "rgba(157, 107, 107, 0.15)"
-              },
-              grid: {
-                color: "rgba(157, 107, 107, 0.15)"
-              },
-              pointLabels: {
-                color: "#6d5252",
-                font: {
-                  family: "Space Grotesk"
-                }
-              },
-              ticks: {
-                color: "#6d5252",
-                backdropColor: "rgba(255, 255, 255, 0.7)",
-                callback: (value) => `${value}K`
-              }
-            }
-          }
-        }
-      });
-    </script>
   </body>
 </html>
