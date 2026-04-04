@@ -639,6 +639,240 @@ a {
   font-weight: 600;
 }
 
+.operational-subsection {
+  margin-top: 1.2rem;
+}
+
+.operational-state {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.operational-filter-head {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+}
+
+.operational-filter-head h3 {
+  margin-top: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.operational-filter {
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid rgba(157, 107, 107, 0.32);
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.filter-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(60, 47, 47, 0.78);
+}
+
+.operational-filter summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.55rem 0.75rem;
+}
+
+.operational-filter summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter-current {
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.filter-options {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0 0.4rem 0.45rem;
+}
+
+.filter-options label {
+  border-radius: 0.45rem;
+  padding: 0.42rem 0.5rem;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.filter-options label:hover {
+  background: rgba(157, 107, 107, 0.1);
+}
+
+.operational-filter:focus-within {
+  border-color: rgba(157, 107, 107, 0.72);
+  box-shadow: 0 0 0 3px rgba(220, 199, 170, 0.4);
+}
+
+.operational-grid {
+  margin-top: 1rem;
+  min-height: 440px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.table-cover {
+  width: min(94%, 760px);
+  position: absolute;
+  transform-origin: center center;
+  transition: transform 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
+  backface-visibility: hidden;
+}
+
+.table-products {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 3;
+  filter: none;
+}
+
+.table-platforms {
+  transform: translateX(50%) scale(0.84) rotateY(-12deg);
+  opacity: 0.16;
+  z-index: 2;
+  filter: saturate(0.72);
+}
+
+.table-campaigns {
+  transform: translateX(-50%) scale(0.84) rotateY(12deg);
+  opacity: 0.16;
+  z-index: 1;
+  filter: saturate(0.72);
+}
+
+#focus-products:checked ~ .operational-grid .table-products,
+#focus-platforms:checked ~ .operational-grid .table-platforms,
+#focus-campaigns:checked ~ .operational-grid .table-campaigns {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 3;
+  filter: none;
+}
+
+#focus-products:checked ~ .operational-grid .table-platforms,
+#focus-platforms:checked ~ .operational-grid .table-campaigns,
+#focus-campaigns:checked ~ .operational-grid .table-products {
+  transform: translateX(50%) scale(0.84) rotateY(-12deg);
+  opacity: 0.16;
+  z-index: 2;
+}
+
+#focus-products:checked ~ .operational-grid .table-campaigns,
+#focus-platforms:checked ~ .operational-grid .table-products,
+#focus-campaigns:checked ~ .operational-grid .table-platforms {
+  transform: translateX(-50%) scale(0.84) rotateY(12deg);
+  opacity: 0.16;
+  z-index: 1;
+}
+
+#focus-products:checked ~ .operational-lower-grid .list-platforms,
+#focus-products:checked ~ .operational-lower-grid .list-campaigns,
+#focus-platforms:checked ~ .operational-lower-grid .list-products,
+#focus-platforms:checked ~ .operational-lower-grid .list-campaigns,
+#focus-campaigns:checked ~ .operational-lower-grid .list-products,
+#focus-campaigns:checked ~ .operational-lower-grid .list-platforms {
+  display: none;
+}
+
+#focus-products:checked ~ .operational-subsection .filter-current::after {
+  content: "Top Products";
+}
+
+#focus-platforms:checked ~ .operational-subsection .filter-current::after {
+  content: "Top Platforms";
+}
+
+#focus-campaigns:checked ~ .operational-subsection .filter-current::after {
+  content: "Top Campaigns";
+}
+
+.filter-current {
+  min-height: 1.2rem;
+}
+
+.filter-current::after {
+  content: "Top Products";
+}
+
+.operational-lower-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.operational-card {
+  min-height: 100%;
+}
+
+.table-wrap {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+  border: 1px solid rgba(157, 107, 107, 0.14);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.table-wrap th,
+.table-wrap td {
+  text-align: left;
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid rgba(157, 107, 107, 0.12);
+  font-size: 0.84rem;
+}
+
+.table-wrap th {
+  color: rgba(157, 107, 107, 0.92);
+  background: rgba(247, 221, 212, 0.35);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.table-wrap tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.alerts-list,
+.top-list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.55rem;
+  color: rgba(60, 47, 47, 0.85);
+  font-size: 0.88rem;
+}
+
+.top-lists {
+  margin-top: 0.3rem;
+}
+
+.is-hidden {
+  display: none;
+}
+
 .anchor-target {
   scroll-margin-top: 6.5rem;
 }
@@ -667,6 +901,42 @@ a {
   .headline-split {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .operational-filter-head {
+    grid-template-columns: 1fr auto;
+  }
+
+  .operational-lower-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .operational-grid {
+    min-height: 470px;
+  }
+
+  .table-cover {
+    width: min(84%, 800px);
+  }
+
+  .table-platforms {
+    transform: translateX(54%) scale(0.84) rotateY(-12deg);
+  }
+
+  .table-campaigns {
+    transform: translateX(-54%) scale(0.84) rotateY(12deg);
+  }
+
+  #focus-products:checked ~ .operational-grid .table-platforms,
+  #focus-platforms:checked ~ .operational-grid .table-campaigns,
+  #focus-campaigns:checked ~ .operational-grid .table-products {
+    transform: translateX(54%) scale(0.84) rotateY(-12deg);
+  }
+
+  #focus-products:checked ~ .operational-grid .table-campaigns,
+  #focus-platforms:checked ~ .operational-grid .table-products,
+  #focus-campaigns:checked ~ .operational-grid .table-platforms {
+    transform: translateX(-54%) scale(0.84) rotateY(12deg);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -680,5 +950,9 @@ a {
 
   .drivers-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .operational-grid {
+    min-height: 500px;
   }
 }

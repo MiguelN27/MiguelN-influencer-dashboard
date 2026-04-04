@@ -12,7 +12,7 @@
         <div class="header-inner">
           <a href="#" class="brand" aria-label="Company homepage">
             <span class="brand-dot" aria-hidden="true"></span>
-            <span class="brand-name">Cat Feeding Co.</span>
+            <span class="brand-name">AvalonAvalon</span>
           </a>
 
           <nav class="site-nav" aria-label="Primary navigation">
@@ -25,12 +25,14 @@
               <ul class="nav-list mobile-list">
                 <li><a href="#kpi-overview">KPI Overview</a></li>
                 <li><a href="#drivers">Drivers</a></li>
+                <li><a href="#operational-details">Operational Details</a></li>
               </ul>
             </details>
 
             <ul class="nav-list desktop-list">
               <li><a href="#kpi-overview">KPI Overview</a></li>
               <li><a href="#drivers">Drivers</a></li>
+              <li><a href="#operational-details">Operational Details</a></li>
             </ul>
           </nav>
         </div>
@@ -259,6 +261,204 @@
                     <text x="268" y="221" text-anchor="end">TikTok</text>
                     <text x="32" y="221" text-anchor="start">YouTube</text>
                   </svg>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="operational-details" class="panel card-glow anchor-target">
+            <input class="operational-state" type="radio" name="operationalFocus" id="focus-products" checked>
+            <input class="operational-state" type="radio" name="operationalFocus" id="focus-platforms">
+            <input class="operational-state" type="radio" name="operationalFocus" id="focus-campaigns">
+
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Third Block</p>
+                <h2>Operational Details</h2>
+              </div>
+              <span class="badge">Execution Insights</span>
+            </div>
+
+            <div class="full-width-panel operational-subsection">
+              <div class="operational-filter-head">
+                <div>
+                  <p class="kpi-label">Sub-section</p>
+                  <h3>Top Performance Filter</h3>
+                </div>
+
+                <details class="operational-filter" role="listbox" aria-label="Select operational details focus">
+                  <summary>
+                    <span class="filter-label">Filter view</span>
+                    <span class="filter-current">Choose top view</span>
+                  </summary>
+                  <div class="filter-options">
+                    <label for="focus-products">Top Products</label>
+                    <label for="focus-platforms">Top Platforms</label>
+                    <label for="focus-campaigns">Top Campaigns</label>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="operational-grid">
+              <article class="chart-card operational-card table-cover table-products">
+                <h3>Products Table</h3>
+                <p class="muted">Price, commissions generated, conversions, and ROI by product.</p>
+                <div class="table-wrap" role="region" aria-label="Products performance table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Commissions</th>
+                        <th>Conversions</th>
+                        <th>ROI</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Product A</td>
+                        <td>EUR 39</td>
+                        <td>EUR 1,980</td>
+                        <td>214</td>
+                        <td>3.6x</td>
+                      </tr>
+                      <tr>
+                        <td>Product B</td>
+                        <td>EUR 59</td>
+                        <td>EUR 4,420</td>
+                        <td>386</td>
+                        <td>4.8x</td>
+                      </tr>
+                      <tr>
+                        <td>Product C</td>
+                        <td>EUR 29</td>
+                        <td>EUR 1,740</td>
+                        <td>322</td>
+                        <td>3.1x</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="chart-card operational-card table-cover table-platforms">
+                <h3>Platforms Table</h3>
+                <p class="muted">Reach, engagement, conversions, and best platform by metric.</p>
+                <div class="table-wrap" role="region" aria-label="Platform performance table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Platform</th>
+                        <th>Reach</th>
+                        <th>Engagement</th>
+                        <th>Conversions</th>
+                        <th>Best Metric</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Instagram</td>
+                        <td>228K</td>
+                        <td>8.3%</td>
+                        <td>412</td>
+                        <td>Reach</td>
+                      </tr>
+                      <tr>
+                        <td>TikTok</td>
+                        <td>141K</td>
+                        <td>10.1%</td>
+                        <td>307</td>
+                        <td>Engagement</td>
+                      </tr>
+                      <tr>
+                        <td>YouTube</td>
+                        <td>73K</td>
+                        <td>6.9%</td>
+                        <td>203</td>
+                        <td>Conversion Quality</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="chart-card operational-card table-cover table-campaigns">
+                <h3>Campaigns Table</h3>
+                <p class="muted">Dates, promoted products, results, and overall performance.</p>
+                <div class="table-wrap" role="region" aria-label="Campaign performance table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Campaign</th>
+                        <th>Dates</th>
+                        <th>Products</th>
+                        <th>Results</th>
+                        <th>Performance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Spring Care Push</td>
+                        <td>Mar 01 - Mar 14</td>
+                        <td>A, B</td>
+                        <td>EUR 4,240</td>
+                        <td>High</td>
+                      </tr>
+                      <tr>
+                        <td>Protein Focus Week</td>
+                        <td>Mar 15 - Mar 21</td>
+                        <td>B</td>
+                        <td>EUR 2,980</td>
+                        <td>Very High</td>
+                      </tr>
+                      <tr>
+                        <td>New Owners Bundle</td>
+                        <td>Mar 22 - Mar 31</td>
+                        <td>A, C</td>
+                        <td>EUR 2,510</td>
+                        <td>Medium</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+            </div>
+
+            <div class="operational-lower-grid">
+              <article class="kpi-card operational-card">
+                <h3>Alerts</h3>
+                <p class="muted">Monitor sharp drops, spikes, and unusual performance anomalies.</p>
+                <ul class="alerts-list">
+                  <li><strong>Sharp drop:</strong> Product C conversion rate fell 24% on Mar 26.</li>
+                  <li><strong>Conversion spike:</strong> TikTok campaign "Protein Focus Week" climbed 33% on Mar 19.</li>
+                  <li><strong>Anomaly:</strong> YouTube reach rose 48% with flat engagement on Mar 28.</li>
+                  <li><strong>Anomaly:</strong> Checkout starts rose but completion slowed on Mar 30.</li>
+                </ul>
+              </article>
+
+              <article class="kpi-card operational-card">
+                <h3>Lists with Filters</h3>
+                <p class="muted">Use the filter above to switch between top items.</p>
+
+                <div class="top-lists" aria-live="polite">
+                  <ul class="top-list list-products">
+                    <li>1. Product B - EUR 4,420 commission</li>
+                    <li>2. Product A - EUR 1,980 commission</li>
+                    <li>3. Product C - EUR 1,740 commission</li>
+                  </ul>
+
+                  <ul class="top-list list-platforms">
+                    <li>1. Instagram - 412 conversions</li>
+                    <li>2. TikTok - 307 conversions</li>
+                    <li>3. YouTube - 203 conversions</li>
+                  </ul>
+
+                  <ul class="top-list list-campaigns">
+                    <li>1. Protein Focus Week - Very High performance</li>
+                    <li>2. Spring Care Push - High performance</li>
+                    <li>3. New Owners Bundle - Medium performance</li>
+                  </ul>
                 </div>
               </article>
             </div>
